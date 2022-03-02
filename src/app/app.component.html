@@ -1,1 +1,9 @@
-<h1>This is an Example of Router guard concepts - CanActive, CanActiveChild</h1>
+<h1 class="alert alert-warning">This is an Example of Router guard concepts - CanActive, CanActiveChild</h1>
+
+<div class="" *ngIf="isLoggedUser()">
+  <nav>
+    <a [routerLink]="['/home']" routerLinkActive>Dashoard</a>  | 
+    <a [routerLink]="['/home/user']">Users</a> 
+  </nav>
+</div>
+<router-outlet></router-outlet>
