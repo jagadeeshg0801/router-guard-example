@@ -14,6 +14,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(!this.authService.isLoggedIn()){
+        alert(`You can't allow to access this app! Please login`)
         this.router.navigate(['/login'])
         return false
       }
@@ -22,6 +23,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      if(this.authService.getUserType().toLowerCase() != 'admin'){
+        alert('you don"t have access for this page')
+        return false;
+      }
     return true;
   }
   

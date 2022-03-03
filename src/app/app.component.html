@@ -2,8 +2,12 @@
 
 <div class="" *ngIf="isLoggedUser()">
   <nav>
-    <a [routerLink]="['/home']" routerLinkActive>Dashoard</a>  | 
-    <a [routerLink]="['/home/user']">Users</a> 
+    <a [routerLink]="['/user/welcome']" routerLinkActive>Dashoard</a>  | 
+    <a [routerLink]="['/user']">Users</a>  | 
+    <a [routerLink]="['/user/edit', '1']">Edit User1</a> |
+    <a [routerLink]="['/user/delete', '1']">Delete User1</a> |
+    <a [routerLink]="['/user/view', '1']">View User1</a> |
   </nav>
 </div>
 <router-outlet></router-outlet>
+

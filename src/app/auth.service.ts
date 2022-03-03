@@ -22,7 +22,7 @@ export class AuthService {
   userLogin(userType: string){
     this.isUserLoggedIn = true;
     this.userType = userType;
-    this.router.navigate(['/home'])
+    this.router.navigate(['user/welcome'])
   }
   logout(){
     this.isUserLoggedIn = false;
