@@ -1,11 +1,12 @@
 <div *ngIf="outlet.isActivated == false">
-    <p>users-list works!</p>
+   
     <ng-container *ngTemplateOutlet="userListPanel"></ng-container>
  </div>
  
  <router-outlet #outlet="outlet"></router-outlet>
 
 <ng-template #userListPanel>
+    <p>users-list works!</p>
     <!-- <p-table [columns]="cols" [value]="usersList">
         <ng-template pTemplate="header" let-columns>
             <tr>
