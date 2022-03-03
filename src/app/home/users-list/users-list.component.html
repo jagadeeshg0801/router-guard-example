@@ -1,1 +1,25 @@
-<p>users-list works!</p>
+<div *ngIf="outlet.isActivated == false">
+    <p>users-list works!</p>
+    <ng-container *ngTemplateOutlet="userListPanel"></ng-container>
+ </div>
+ 
+ <router-outlet #outlet="outlet"></router-outlet>
+
+<ng-template #userListPanel>
+    <!-- <p-table [columns]="cols" [value]="usersList">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                  test
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                 test1
+                </td>
+            </tr>
+        </ng-template>
+    </p-table> -->
+</ng-template>

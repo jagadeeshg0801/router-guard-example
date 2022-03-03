@@ -21,7 +21,7 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
   ]
 })
 export class HomeModule { }
