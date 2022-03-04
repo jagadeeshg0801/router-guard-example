@@ -6,21 +6,31 @@
  <router-outlet #outlet="outlet"></router-outlet>
 
 <ng-template #userListPanel>
-    <p>users-list works!</p>
-    <!-- <p-table [columns]="cols" [value]="usersList">
+    <p-table [columns]="cols" [value]="usersList">
+        <ng-template pTemplate="caption" let-title>
+           Registered Users
+        </ng-template>
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th *ngFor="let col of columns">
-                  test
+                  {{col.fieldName}}
                 </th>
+                <th class="actions">Actions</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
             <tr>
                 <td *ngFor="let col of columns">
-                 test1
+                 {{rowData[col.fieldName]}}
+                </td>
+                <td>
+                    <a [routerLink]="['/user/edit', rowData['userId']]" [queryParams]="{a:rowData['userId']}">Edit</a> | 
+                    <!-- Here queryParams usage can  be skip if we are using path params and vice versa -->
+                    <a [routerLink]="['/user/delete', rowData['userId']]">Delete</a> |
+                    <a [routerLink]="['/user/view', rowData['userId']]">View</a>
                 </td>
             </tr>
         </ng-template>
-    </p-table> -->
+    </p-table>
 </ng-template>
+

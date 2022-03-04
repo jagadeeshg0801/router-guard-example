@@ -1,14 +1,12 @@
 <h1 class="alert alert-warning">This is an Example of Router guard concepts - CanActive, CanActiveChild</h1>
 
 <div class="" *ngIf="isLoggedUser()">
-  <nav>
-    <a [routerLink]="['/user/welcome']" routerLinkActive>Dashoard</a>  | 
-    <a [routerLink]="['/user']">Users</a>  | 
-    <a [routerLink]="['user/create']">Create Users</a>  | 
-    <a [routerLink]="['/user/edit', '1']">Edit User1</a> |
-    <a [routerLink]="['/user/delete', '1']">Delete User1</a> |
-    <a [routerLink]="['/user/view', '1']">View User1</a>
+  <nav class="menu-nav">
+    <a [routerLink]="['/user/welcome']" routerLinkActive="is-active">Dashoard</a>   
+    <a [routerLink]="['/user']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Users</a>  
+    <a [routerLink]="['user/create']" routerLinkActive="is-active">Create User</a> 
   </nav>
 </div>
+<p-toast position="top-center" key="tc"></p-toast>
 <router-outlet></router-outlet>
 
