@@ -27,4 +27,8 @@ export class UserService {
     const user: any = this.users.find((u)=> u.userId == id);
     return of(user);
   }
+
+  updateUsersData(){
+    
+  }
 }

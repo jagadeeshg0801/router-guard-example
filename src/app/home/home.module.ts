@@ -9,6 +9,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { TableModule } from 'primeng/table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { TableModule } from 'primeng/table';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    TableModule
+    TableModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }
