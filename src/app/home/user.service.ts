@@ -12,10 +12,10 @@ export class UserService {
     this.users = [
       new User(1, 'Jaga', 'hyd'),
       new User(2, 'laxman', 'hyd'),
-      new User(1, 'Ram', 'chennai'),
-      new User(1, 'Raj', 'Bglr'),
-      new User(1, 'Raki', 'hyd'),
-      new User(1, 'mahesh', 'Mub'),
+      new User(3, 'Ram', 'chennai'),
+      new User(4, 'Raj', 'Bglr'),
+      new User(5, 'Raki', 'hyd'),
+      new User(6, 'mahesh', 'Mub'),
     ]
   }
 
@@ -26,5 +26,9 @@ export class UserService {
   getUserData(id: number) : Observable<User>{ 
     const user: any = this.users.find((u)=> u.userId == id);
     return of(user);
+  }
+
+  updateUsersData(){
+    
   }
 }

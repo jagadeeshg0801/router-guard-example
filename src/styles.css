@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: #48514a14;
+}
+.p-datatable .p-datatable-header {
+    padding: 0.5rem;
+    background-color: #526a3f;
+    color: #fff;
+    border-top: none;
+}
+.p-datatable .p-datatable-thead > tr > th {
+    text-align: left;
+    padding: 1rem 1rem;
+    border: 1px solid #e9ecef;
+    border-width: 0 0 1px 0;
+    font-weight: 600;
+    color: #495057;
+    background: #e0efe4;
+    transition: box-shadow 0.2s;
+    padding: 0.5rem;
+    text-transform: capitalize;
+}
+.p-datatable .p-datatable-thead > tr > th.actions{
+    width: 250px;
+}
+.p-datatable .p-datatable-thead > tr > th.actions > a, .p-datatable-tbody > tr > td.actions > a{
+    text-decoration: none;
+}
+.p-datatable .p-datatable-tbody tr:nth-child(even) {
+    background: #e8f7ec !important;
+}
+.p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.5rem !important;
+}
+
+
+/* Menu Nav CSS starts here... */
+
+nav.menu-nav {
+    background: #48514a;
+    padding: 0.3rem 0.;
+    color: #fff;
+    margin-top: -16px;
+    border: none;
+    line-height: 31px;
+    padding-bottom: 0.2rem;
+}
+
+nav.menu-nav a {
+    color: #fff;
+    text-decoration: underline;
+    padding: 0.25rem 0.4rem 0.5rem;
+    border-bottom: none;
+    background: #3f6a4a;
+    text-decoration: none;
+    border-right: 2px solid #48514a;
+}
+
+nav.menu-nav a.is-active {
+    background-color: #526a3f;
+    color: #fff3cd;
+}
+
+/* User Edit Panel Css Starts here..... */
+.user-edit-panel{
+    min-height: 82.2vh;
+    background: #ffffff;
+    padding: 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.user-edit-panel .title-header-text{
+    background: #fff3cd;
+    padding: 10px;
+    margin: 0;
+    font-weight: 700;
+    border-bottom: 2px solid #fff3cd;
+    margin-top: 5px;
+    border-radius: inherit;
+    color: #fff;
+    background: #3f6a4a;
+}
+
+.user-form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: 700;
+}
+
+.form-group {
+    padding: 10px;
+}
+
+.btn-panel {
+    float: right;
+}
+
+.btn-panel .reset-btn{
+    margin-right: 10px;
+}
