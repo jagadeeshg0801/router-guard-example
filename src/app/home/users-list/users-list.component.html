@@ -23,7 +23,7 @@
                 <td *ngFor="let col of columns">
                  {{rowData[col.fieldName]}}
                 </td>
-                <td>
+                <td class="actions">
                     <a [routerLink]="['/user/edit', rowData['userId']]" [queryParams]="{a:rowData['userId']}">Edit</a> | 
                     <!-- Here queryParams usage can  be skip if we are using path params and vice versa -->
                     <a [routerLink]="['/user/delete', rowData['userId']]">Delete</a> |
