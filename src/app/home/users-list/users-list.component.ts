@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { User } from '../user';
 import { UserService } from '../user.service';
 
@@ -9,19 +10,30 @@ import { UserService } from '../user.service';
 })
 export class UsersListComponent implements OnInit {
 
-  usersList : User[] =[ ];
+  
   cols: any[] = [
     { fieldName: 'userId'  },
     { fieldName: 'name'  },
     { fieldName: 'location'  },
   ];
-  constructor(private userService: UserService) {
-     this.userService.getUsersList().subscribe((res)=>{
-      this.usersList = res;
-    })
+  constructor(private userService: UserService, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) { 
+         this.getUserList();
+      }   
+          // update this.homepageData
+    });
    }
+   usersList : User[] =  [];
 
   ngOnInit(): void {
+    this.getUserList()
+  }
+
+  getUserList(){
+    this.userService.getUsersList().subscribe((res)=>{
+      this.usersList = res;
+    })
   }
 
 }

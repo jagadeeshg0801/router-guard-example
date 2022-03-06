@@ -10,6 +10,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { TableModule } from 'primeng/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateUserComponent,
     EditUserComponent,
     ViewUserComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    UserFormComponent
   ],
   imports: [
     CommonModule,
