@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { User } from './user';
 
@@ -8,7 +9,9 @@ import { User } from './user';
 export class UserService {
 
   users : User[] = [];
-  constructor() { 
+  userForm: any;
+  userData: any;
+  constructor(private formBuilder: FormBuilder) { 
     this.users = [
       new User(1, 'Jaga', 'hyd'),
       new User(2, 'laxman', 'hyd'),
@@ -30,5 +33,26 @@ export class UserService {
 
   updateUsersData(){
     
+  }
+
+  getUsersArray(){  
+    return this.users ;
+  }
+
+  updateUsersArray(userList: User[]){
+    this.users = [...userList]
+  }
+
+
+  buildForm(userData: User){
+    this.userForm = this.formBuilder.group({
+      userId: [{ value: '', disabled: true} ,[Validators.required]],
+      name: ['', Validators.required],
+      location: ['', Validators.required]
+    })
+    if(userData){
+      this.userForm.patchValue(userData);
+    }
+    return this.userForm;
   }
 }
