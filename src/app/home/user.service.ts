@@ -11,6 +11,17 @@ export class UserService {
   users : User[] = [];
   userForm: any;
   userData: any;
+  private _isUndoAction: boolean = false;
+  prev_state_users: User[];
+
+  public get isUndoAction(): boolean {
+    return this._isUndoAction;
+  }
+
+  public set isUndoAction(value: boolean) {
+    this._isUndoAction = value;
+  }
+
   constructor(private formBuilder: FormBuilder) { 
     this.users = [
       new User(1, 'Jaga', 'hyd'),
@@ -39,8 +50,14 @@ export class UserService {
     return this.users ;
   }
 
+  getUsersArray_prev_state(){  
+    return this.prev_state_users ;
+  }
+
   updateUsersArray(userList: User[]){
-    this.users = [...userList]
+    this.prev_state_users = [...this.users ];
+    this.users = [...userList];
+    this.isUndoAction = true;
   }
 
 

@@ -23,6 +23,7 @@ export class CreateUserComponent implements OnInit {
     this.userService.getUserData(id).subscribe((res)=>{
       this.userData = {...res};
      this.buildForm();
+     
     })
   }
 
@@ -35,7 +36,7 @@ export class CreateUserComponent implements OnInit {
     this.getUserData(this.userForm.get('userId')?.value);
   }
   submitUserData(event: User){
-    let userList: User[] = this.userService.getUsersArray();
+    let userList: User[] = [...this.userService.getUsersArray()];
     userList.push(event);
     this.userService.updateUsersArray(userList);
     this.messageService.add({severity:'success', summary: 'Success', detail: `New User Details Saved Successfully!!`});

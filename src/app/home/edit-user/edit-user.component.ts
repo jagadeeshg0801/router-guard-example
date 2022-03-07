@@ -44,7 +44,7 @@ export class EditUserComponent implements OnInit {
   }
 
   submitUserData(event: User){
-    let userList: User[] = this.userService.getUsersArray();
+    let userList: User[] =[ ...this.userService.getUsersArray()];
     let index = userList.findIndex(ele => ele.userId == event.userId)
     userList[index] = {...event}
     this.userService.updateUsersArray(userList);

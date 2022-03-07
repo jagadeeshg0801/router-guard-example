@@ -9,6 +9,7 @@
     <p-table [columns]="cols" [value]="usersList">
         <ng-template pTemplate="caption" let-title>
            Registered Users
+           <span class="undo-cls" *ngIf="getUndoStatus()" (click)="undoRecentAction()"> <i class="fa fa-solid fa-rotate-left"></i> </span>
         </ng-template>
         <ng-template pTemplate="header" let-columns>
             <tr>

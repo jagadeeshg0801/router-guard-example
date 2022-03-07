@@ -36,4 +36,15 @@ export class UsersListComponent implements OnInit {
     })
   }
 
+  getUndoStatus(){
+    return this.userService.isUndoAction;
+  }
+
+  undoRecentAction(){
+    const usersList_prev_state = this.userService.getUsersArray_prev_state();
+    this.userService.updateUsersArray(usersList_prev_state);
+    this.usersList = [...usersList_prev_state]
+    this.userService.isUndoAction = false;
+  }
+
 }
