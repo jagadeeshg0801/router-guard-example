@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../user';
 import { UserService } from '../user.service';
@@ -10,7 +11,8 @@ import { UserService } from '../user.service';
 })
 export class ViewUserComponent implements OnInit {
 
-  userData : User | undefined;
+  userData : User;
+  userForm: FormGroup;
 
   constructor(private router: Router, private activateRouter: ActivatedRoute, private userService: UserService) {
     this.activateRouter.params.subscribe((params)=>{ // Method2 to retrieve path Params
@@ -20,12 +22,19 @@ export class ViewUserComponent implements OnInit {
     })
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    this.buildForm();
   }
 
   getUserData(id: number){
     this.userService.getUserData(id).subscribe((res)=>{
       this.userData = {...res};
+     this.buildForm();
     })
   }
+
+  buildForm(){
+    this.userForm = this.userService.buildForm(this.userData);
+  }
+  
 }

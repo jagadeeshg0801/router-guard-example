@@ -1,4 +1,4 @@
-<p>delete-user works!</p>
-<p>User Details</p>
-<p>{{userData | json}}</p>
+<div class="container user-edit-panel">   
+    <app-user-form [userForm]="userForm" [actionType]="'delete'" [formTitle]="'You want to delete this User Details !'" (userFormSubmit)="submitUserData($event)"></app-user-form>
+</div>
 
