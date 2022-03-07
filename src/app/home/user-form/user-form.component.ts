@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
 
@@ -7,9 +7,10 @@ import { UserService } from '../user.service';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent implements OnInit {
+export class UserFormComponent implements OnInit, OnChanges {
   @Input('userForm') userForm: FormGroup;
   @Input('formTitle') formTitle: string;
+  @Input('actionType') actionType: string;
   @Output() userFormSubmit = new EventEmitter();
   
   userData: { userId: number; name: string; location: string; };
@@ -17,6 +18,28 @@ export class UserFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      if(changes['actionType'].currentValue ){
+        this.setFormEnability();
+      }
+  }
+
+  setFormEnability(){
+    switch(this.actionType){
+      case 'view':
+        this.userForm.disable();
+        break;
+      case 'delete':
+        this.userForm.disable();
+        break;
+        default :
+    }
+  }
+
+  
+
+
 
 
 
