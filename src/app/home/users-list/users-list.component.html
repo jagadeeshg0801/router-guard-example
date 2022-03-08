@@ -9,7 +9,10 @@
     <p-table [columns]="cols" [value]="usersList">
         <ng-template pTemplate="caption" let-title>
            Registered Users
-           <span class="undo-cls" *ngIf="getUndoStatus()" (click)="undoRecentAction()"> <i class="fa fa-solid fa-rotate-left"></i> </span>
+           <span class="undo-cls" *ngIf="getUndoStatus()" (click)="undoRecentAction($event)"  pButton icon="pi pi-check" label="Confirm">
+               <span pTooltip="Undo the Recent Action" tooltipPosition="left"> <i class="fa fa-solid fa-rotate-left"></i></span>
+               
+         </span>
         </ng-template>
         <ng-template pTemplate="header" let-columns>
             <tr>
