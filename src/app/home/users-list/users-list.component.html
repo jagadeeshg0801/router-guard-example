@@ -1,5 +1,4 @@
-<div *ngIf="outlet.isActivated == false">
-   
+<div *ngIf="outlet.isActivated == false">   
     <ng-container *ngTemplateOutlet="userListPanel"></ng-container>
  </div>
  
@@ -17,7 +16,7 @@
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th *ngFor="let col of columns">
-                  {{col.fieldName}}
+                  {{col.headerName}}
                 </th>
                 <th class="actions">Actions</th>
             </tr>
@@ -25,7 +24,11 @@
         <ng-template pTemplate="body" let-rowData let-columns="columns">
             <tr>
                 <td *ngFor="let col of columns">
-                 {{rowData[col.fieldName]}}
+                    <!-- [userId, name, location]  -->
+                    <!-- { userId: 1, name: 'jaga', loc: 'hyd'} rowData -->
+                    <!-- { userId: 2, name: 'jaxman', loc: 'hyd'} rowData -->
+                 {{rowData[col.fieldName]}} 
+                 <!-- rowData['user'] , rowData['name'], rowData['location']... -->
                 </td>
                 <td class="actions">
                     <a [routerLink]="['/user/edit', rowData['userId']]" [queryParams]="{a:rowData['userId']}">Edit</a> | 

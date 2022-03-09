@@ -13,9 +13,9 @@ export class UsersListComponent implements OnInit {
 
   
   cols: any[] = [
-    { fieldName: 'userId'  },
-    { fieldName: 'name'  },
-    { fieldName: 'location'  },
+    { fieldName: 'userId', headerName: 'User Id'  },
+    { fieldName: 'name' , headerName: 'User Name'   },
+    { fieldName: 'location' , headerName: 'Location'  },
   ];
   constructor(private userService: UserService, private router: Router, private confirmationService: ConfirmationService) {
     this.router.events.subscribe(event => {
