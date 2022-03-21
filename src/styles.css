@@ -104,3 +104,16 @@ label {
 .btn-panel .reset-btn{
     margin-right: 10px;
 }
+
+.undo-cls{
+    float: right;
+    cursor: pointer;
+    padding: 3px 10px;
+    font-size: 16px;
+    background-color: #3f6a4a;
+    border: 1px solid #fff;
+    border-radius: 60%;
+    text-align: center;
+    margin-top: -4px;
+    box-shadow: -1px 1px 11px 0px white;
+}

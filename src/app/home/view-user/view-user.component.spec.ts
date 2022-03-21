@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { UserService } from '../user.service';
 
 import { ViewUserComponent } from './view-user.component';
 
@@ -8,7 +11,9 @@ describe('ViewUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewUserComponent ]
+      declarations: [ ViewUserComponent ],
+      imports: [RouterTestingModule.withRoutes([])],
+      providers: [UserService, FormBuilder]
     })
     .compileComponents();
   });

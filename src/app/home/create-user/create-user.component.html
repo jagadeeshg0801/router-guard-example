@@ -1,4 +1,6 @@
 
-<div class="container user-edit-panel">
-    <div class="">Create User Details</div>
+<div class="container user-edit-panel">   
+    <app-user-form [userForm]="userForm" [actionType]="'create'" [formTitle]="'Create User Details'" (userFormSubmit)="submitUserData($event)"></app-user-form>
 </div>
+
+

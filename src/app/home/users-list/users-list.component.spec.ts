@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ConfirmationService } from 'primeng/api';
+import { UserService } from '../user.service';
 
 import { UsersListComponent } from './users-list.component';
 
@@ -8,7 +12,9 @@ describe('UsersListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsersListComponent ]
+      imports: [RouterTestingModule.withRoutes([])],
+      declarations: [ UsersListComponent ],
+      providers: [UserService, ConfirmationService, FormBuilder]
     })
     .compileComponents();
   });
