@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -13,7 +14,8 @@ describe('ViewUserComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ViewUserComponent ],
       imports: [RouterTestingModule.withRoutes([])],
-      providers: [UserService, FormBuilder]
+      providers: [UserService, FormBuilder],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });

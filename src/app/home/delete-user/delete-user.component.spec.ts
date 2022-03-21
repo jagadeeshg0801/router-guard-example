@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -14,7 +15,8 @@ describe('DeleteUserComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes([])],
       providers: [UserService, MessageService, FormBuilder],
-      declarations: [ DeleteUserComponent ]
+      declarations: [ DeleteUserComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });

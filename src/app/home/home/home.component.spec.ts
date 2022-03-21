@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from 'src/app/auth.service';
@@ -12,7 +13,8 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes([])],
       declarations: [ HomeComponent ],
-      providers: [AuthService]
+      providers: [AuthService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });

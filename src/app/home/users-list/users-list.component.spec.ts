@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -14,7 +15,8 @@ describe('UsersListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes([])],
       declarations: [ UsersListComponent ],
-      providers: [UserService, ConfirmationService, FormBuilder]
+      providers: [UserService, ConfirmationService, FormBuilder],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });

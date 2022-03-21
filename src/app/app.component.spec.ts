@@ -1,5 +1,7 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TableModule } from 'primeng/table';
 import { AppComponent } from './app.component';
 import { AuthService } from './auth.service';
 
@@ -7,12 +9,14 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes([])
+        RouterTestingModule.withRoutes([]),
+        TableModule
       ],
       declarations: [
         AppComponent
       ],
-      providers: [AuthService]
+      providers: [AuthService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   });
 
