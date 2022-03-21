@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MessageService } from 'primeng/api';
+import { UserService } from '../user.service';
 
 import { DeleteUserComponent } from './delete-user.component';
 
@@ -8,6 +12,8 @@ describe('DeleteUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RouterTestingModule.withRoutes([])],
+      providers: [UserService, MessageService, FormBuilder],
       declarations: [ DeleteUserComponent ]
     })
     .compileComponents();
