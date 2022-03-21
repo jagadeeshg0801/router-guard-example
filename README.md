@@ -29,3 +29,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## To View Application 
 
 just click on this https://jagadeeshg0801.github.io/router-guard-example
+
+
+## Covered Concepts in the Application
+
+1. Router Configuration - Implementation of  Lazy Loading for the routes and its childrens
+2. Router Guards - AuthGuard, which is Authentication and Authorization to access the Application
+3. Router Params, Path Params
+4. Reactive Forms building using FormBuilder
+5. Component Interactions by using Service Approach
+6. Third Party Library like, Primeng library injected into this application. And implemented grid layout for the User's List showing.
+7. Primeng other modules like, Confirm Dialogue , Message Info Panel(Toaster) implemented to confirm the user action and showing status message for that action
+8. Unit Test Cases added in basic version
